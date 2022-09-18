@@ -1,0 +1,187 @@
+#+TITLE:Notas de Álgebra Lineal
+#+AUTHOR:Fernando Ugalde-Ubaldo  <f.ugalde@ciencias.unam.mx>
+
+* 2. Espacios Vectoriales
+*** 2.1 Definición (/Espacio vectorial/)
+Sea /F/ un campo. Un espacio vectorial sobre /F/ o un /F/-espacio vectorial, consiste de un conjunto no vacío /V/, una operación binaria en /V/, llamada suma:
+
++: /V/ \times /V/ \rightarrow /V/ que asigna a cada pareja (u_1, u_2) \in /V/ \times /V/ un _único_ elemento de /V/, denotado u_1 + u_2
+
+Y una función llamada producto por escalares:
+
+/F/ \times /V/ \rightarrow /V/ que asigna a cada pareja (\lambda, v) \in /F/ \times /V/ un _único_ elemento de /V/, denotado por \lambda{}v y que satisfacen lo siguiente:
+
+s1) \forall /v/, /w/, /z/ \in /V/, /v/ + (/w/ + /z/) = (/v/ + /w/) + /z/ (*Asociativa*)
+s2) \forall /v/, /w/ \in /V/, /v/ + /w/ = /w/ + /v/ (*Conmutatividad*)
+s3) Existencia de neutro aditivo. Existe /e/ \in /V/ tal que /e/ + /v/ = /v/ + /e/ = /v/, \forall /v/ \in /V/.
+s4) Existencia de inversos aditivos. Para cada /v/ \in /V/, existe /v/\prime \in /V/ tal que /v/ + /v/\prime = /v/\prime + /v/ = /e/.
+
+p1) \forall \lambda, \mu \in /F/ y \forall /v/ \in /V/, \lambda(\mu /v/) = (\lambda\mu) /v/ (*Asociativa*)
+p2) Existencia de neutro respecto del producto por escalares. 1_F \cdot /v/ = /v/, \forall /v/ \in /V/.
+
+*Distributivas*.
+
+SP1) \forall \lambda, \mu \in /F/, \forall /v/ \in /V/, (\lambda + \mu) /v/ = \lambda{}v + \mu{}v.
+SP2) \forall \lambda \in /F/, \forall /v/, /w/ \in /V/, \lambda(/v/ + /w/) = \lambda{}v + \lambda{}w.
+
+Los elementos de un /F/-espacio vectorial /V/, les llamamos /vectores/ y los elementos del campo les llamamos /escalares/.
+*** Notación
+Sea /V/ un /F/-e.v.
+
+Denotamos por 0 = 0_V al neutro aditivo de /V/ y lo llamamos el vector cero.
+
+Para cada /v/ \in /V/, denotamos por -/v/ al inverso aditivo de /v/.
+*** 2.2 Proposición
+Sean /v/, /w/, /z/ \in /V/ y /V/ un /F/-e.v.
+
+1) Existe un único neutro aditivo.
+2) Cada vector /v/ \in /V/, tiene un único inverso aditivo.
+3) Si /v/ + /w/ = /v/ + /z/, entonces /w/ = /z/.
+
+*Nota*: Demostraciones realizadas en clase.
+*** 2.3 El espacio trivial o espacio cero.
+Sea V_0 = {/v/} un conjunto con un elemento.
+
+Definimos /v/ + /v/ = /v/ y para cada \lambda \in /F/, definimos \lambda{}v = /v/.
+
+Entonces V_0 es un esapcio vectorial sobre /F/ junto con estas 2 operaciones. 
+
+*Nota*: Demostramos que si es espacio vectorial en las notas.
+
+*** 2.4 Proposición
+Sea /V/ un /F/-e.v.
+
+Si \lambda{}v = 0_v y \lambda \neq 0, entonces /v/ = 0_v.
+
+*Nota*: La demostración está en las notas.
+
+Además, demostramos que \forall\lambda \in /F/, \lambda{}0_v = 0_v.
+
+*** 2.5 Proposición
+Sea /V/ un /F/-e.v. Entonces se cumple lo siguiente:
+
+1) \forall /v/ \in /V/, 0_F \cdot /v/ = 0_V
+2) \forall \lambda \in /F/,, \lambda0_V = 0_V
+3) \forall /v/ \in /V/, -1_F \cdot v = -v
+4) \forall /v/ \in /V/, -(-/v/) = /v/
+
+*Nota*: Las demostraciones están en las notas.
+
+*** 2.6 Definición (/subespacio/)
+Sea (/V/, +, \cdot) un /F/-e.v. y /S/ un subconjunto no vacío de /V/. Diremos que /S/ es un subespacio de /V/ si satisface:
+
+1) \forall /v/, /w/ \in /S/, /v/ + /w/ \in /S/ (/S/ es cerrado bajo la suma)
+2) \forall /v/ \in /S/ y \lambda \in /F/, \lambda{}v \in /S/ (/S/ es cerrado bajo el producto por escalares)
+
+*Observación*: Si /S/ es subespacio de /V/, entonces 0_V \in /S/. Esto sucede pues como /S/ \neq \emptyset tiene al menos un vector /v/ \in /S/. Además, como /S/ es cerrado bajo producto por escalares. -1_F v = -/v/ \in /S/ y como /S/ es cerrado bajo la suma -/v/ + /v/ = 0_V \in /S/.
+
+*** 2.7 Subespacio generador
+Ahora veremos cómo a apartir de un subconjunto de un espacio vectorial /V/, podemos obtener un subespacio.
+
+El subespacio generado por un subconjunto. Sea /V/ un /F/-e.v. y /X/ un subconjunto de /V/.
+
+Sea /L/ = {/S/ \leq /V/ | /X/ \sube /S/} y sea <X> = \cap_{S\in{}L}S. Entonces:
+
+1) <X> es un subespacio de /V/.
+2) Es el menor subespacio de /V/ que contiene a /X/.
+
+<X> se llama el subespacio generado por /X/.
+
+*Nota*: Demostración en las notas.
+
+*Observación*: Si /X/ = \emptyset. <X> = <\emptyset>. Cada subespacio de /V/ contiene a \emptyset, en particular el subespacio trivial y el subespacio trivial está contenido en cada subespacio.
+
+Por lo tanto, <\emptyset> = \cap_{S\leq{}V} S = {0_V} el subespacio trivial.
+*** 2.8 Proposición
+Siguiendo con la [[id:8b5d701e-eebc-4ae0-92d7-93e4783afc09][Clase 6 AL1]] vamos a describir a los elementos de <X> cuando /X/ es un conjunto no vacío y finito.
+
+Sea /V/ un /F/-e.v. y /X/ = {v_1, v_2, \dots, v_n} un conjunto no vacío finito de vectores de /V/, entonces:
+
+<X> = <v_1, v_2, \dots, v_n> = {\lambda_{1}v_{1} + \dots + \lambda_{r}v_r = \sum^r_{i=1}\lambda_{i}v_i | \lambda_i \in /F/,  \forall{}i \in I_n}
+
+*Nota*: Demostración en las notas.
+
+*Observación*: En general, no se cumple que <X> = V.
+*** Notación
+Si /v/ \in /V/ y \lambda \in /F/, entonces llamamos al vector \lambda{}v un múltiplo de /v/.
+*** 2.9 Definición (/vectores canónicos/)
+Sea /F/ un campo.
+
+Sea e_i \in F^n el vector dado por:
+
+e_i = (\delta_i1, \delta_i2, \dots, \delta_in) donde \delta_ij = {1 si /i/ = /j/ y 0 si /i/ \neq /j/}
+
+Esto es, el vector e_i tiene su i-ésima coordeanda igual a 1 y todas las demás son cero.
+
+El conjunto de vectores {e_1, e_2, \dots, e_n} de F^n se llaman los vectores canónicos de F^n.
+
+
+*** 2.10 Proposición
+Sea /F/ un campo y /n/ \in \aleph. Si e_1, e_2, \dots, e_n son los vectores canónicos de F^n, entonces {e_1, e_2, \dots, e_n} genera a F^n.
+
+*Nota*: Demostración en las notas.
+*** 2.11 Definición (/Combinación lineal/)
+Sea /V/ un /F/-e.v. y v_1, v_2, \dots, v_r, /w/ \in /V/.
+
+1) Una combinación lineal de v_1, v_2, \dots, v_r es una expresión de la forma:
+
+    \lambda_{1}v_1 + \lambda_{2}v_2 + \dots + \lambda_{r}v_r donde \lambda_1, \dots, \lambda_r \in /F/.
+
+2) Se dice que /w/ es combinación lineal de los vectores v_1, \dots, v_r si existen escalares \alpha_1, \alpha_2, \dots, \alpha_r \in /F/ tales que
+
+   /w/ = \alpha_{1}v_1 + \alpha_{2}v_2 + \alpha_{r}v_r = \sum^r_{i=1} \alpha_{i}v_i  
+*** 2.12 Definición (/Espacio finitamente generado/)
+Sea /V/ un /F/-e.v.
+
+Diremos que /V/ es un _espacio finitamente generado_ si existen vectores v_1, v_2, \dots, v_r \in /V/ tales que
+
+<v_1, v_2, \dots, v_r> = /V/
+
+Esto es, cada vector /w/ \in /V/ es combinación lineal de v_1, v_2, \dots, v_r.
+*** Encontrar combinación lineal
+
+Si /v/ \in F^n y v_1, v_2, \dots, v_r \in F^n, ¿cómo determinar si /v/ es combinación lineal de v_1, v_2, \dots, v_r? Por ejemplo:
+
+/v/ = (1, 0, -2) \in \real^3.
+
+v_1 = (0, -2, 0)
+v_2 = (0, 0, 1)
+v_3 = (1, 1, 1)
+
+Determinar si /v/ es combinación lineal de v_1, v_2 y v_3.
+
+*Paso 1*. Planteamos ecuación vectorial.
+
+/v/ = \lambda_{1}v_1 + \lambda_{2}v_2 + \lambda_{3}v_3
+
+(1,0,-2) = \lambda_1(0,-2,0) + \lambda_2(0,0,1) + \lambda_3(1,1,1)
+
+*Paso 2*. Efectuamos las operaciones.
+
+(1,0,-2) = (\lambda_3, -2\lambda_1 + \lambda_3 , \lambda_2 + \lambda_3)
+
+Esta igualdad da lugar a un sistema de ecuaciones
+
+\lambda_3 = 1
+-2\lambda_1 + \lambda_3 = 0
+\lambda_2 + \lambda_3 = -2
+
+Y de estas podemos concluir que \lambda_2 = -3 y \lambda_1 = 1/2.
+
+Por lo tanto, el sistema tiene solución, lo cual quiere decir que /v/ es combinación lineal de v_1, v_2, y v_3.
+
+(1,0,-2) = (1/2)(0,-2,0) + (-3)(0,0,1) + (1)(1,1,1)
+*** 2.13 Definción (/Dependencia lineal/)
+Sea /V/ un /F/-e.v. y v_1, v_2, \dots, v_r \in /V/. Diremos que v_1, v_2, \dots, v_r son linealmente dependientes si existen escalares \lambda_1, \lambda_2, \dots, \lambda_r \in /F/ con al menos uno de ellos distinto de cero y tales que
+
+0_V = \lambda_{1}v_1 + \lambda_{2}v_2 + \dots + \lambda_{r}v_r
+
+Esta expresión se llama una *relación de dependencia*.
+*** 2.14 Definición dual (/Independencia lineal/).
+Sea /V/ un /F/-e.v. y v_1, v_2, \dots, v_r \in /V/.
+
+Diremos que v_1, v_2, \dots, v_r son linealmente independientes si no son linealmente dependientes; es decir, la _única_ manera de expresar al vector 0_V como combinación lineal de v_1, v_2, \dots, v_r es:
+
+0_V = 0v_1 + 0v_2 + \dots + 0v_r
+
+
